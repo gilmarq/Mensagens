@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUb-NA-HZ3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OUb-NA-HZ3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,11 +57,100 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Mensagem" id="WDe-8E-6lo"/>
+                    <navigationItem key="navigationItem" title="Mensagem" id="WDe-8E-6lo">
+                        <barButtonItem key="rightBarButtonItem" title="Proxima" id="suE-9p-ik5">
+                            <connections>
+                                <segue destination="XcZ-3k-ieU" kind="show" id="vzN-ag-2Wr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lbMessage" destination="1Ar-wb-N4P" id="kUb-jo-LQ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
+        </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="XGI-6I-NY9">
+            <objects>
+                <viewController storyboardIdentifier="ColorPickerViewController" id="lVR-S8-G0y" customClass="ColorPickerViewController" customModule="Mensagens" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S95-t0-idO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ln-PA-cWR">
+                                <rect key="frame" x="67.5" y="163.5" width="240" height="340"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ea-Qe-3Nm">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tDy-oY-g9I">
+                                        <rect key="frame" x="15.5" y="154.5" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.13725490200000001" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="minimumTrackTintColor" red="1" green="0.28235294119999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="0.28235294119999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="chengColor:" destination="lVR-S8-G0y" eventType="valueChanged" id="Aui-Dt-Cgh"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AdQ-t9-ZKq">
+                                        <rect key="frame" x="16" y="248" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.13725490200000001" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="chengColor:" destination="lVR-S8-G0y" eventType="valueChanged" id="TZm-tX-y7b"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vVy-WL-3mO">
+                                        <rect key="frame" x="16" y="196" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.13725490200000001" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="minimumTrackTintColor" red="0.13725490200000001" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.13725490200000001" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="chengColor:" destination="lVR-S8-G0y" eventType="valueChanged" id="V3S-EE-wun"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6A-Vx-xeK">
+                                        <rect key="frame" x="71" y="292" width="90" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Escolher cor "/>
+                                        <connections>
+                                            <action selector="chooseColor:" destination="lVR-S8-G0y" eventType="touchUpInside" id="EaE-oZ-dCK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="bQc-pU-W1l"/>
+                                    <constraint firstAttribute="height" constant="340" id="dXE-GO-bjJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.00074175440929305384" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9ln-PA-cWR" firstAttribute="centerY" secondItem="S95-t0-idO" secondAttribute="centerY" id="Eav-KB-rtL"/>
+                            <constraint firstItem="9ln-PA-cWR" firstAttribute="centerX" secondItem="S95-t0-idO" secondAttribute="centerX" id="ZOf-n5-o0M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DbR-Ow-dgk"/>
+                    </view>
+                    <connections>
+                        <outlet property="slGreen" destination="vVy-WL-3mO" id="Vc1-LR-hpK"/>
+                        <outlet property="slRed" destination="tDy-oY-g9I" id="gVI-am-JKI"/>
+                        <outlet property="slblue" destination="AdQ-t9-ZKq" id="LUR-Nx-Ke0"/>
+                        <outlet property="viColor" destination="5Ea-Qe-3Nm" id="F2z-8d-rwT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9a4-zh-cfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1624.8" y="-561.76911544227892"/>
         </scene>
         <!--Cor de fundo-->
         <scene sceneID="oVx-Mc-QMT">
@@ -71,7 +161,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RF8-XH-Xvf">
-                                <rect key="frame" x="45" y="60" width="285" height="310"/>
+                                <rect key="frame" x="45" y="104" width="285" height="310"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="310" id="aZQ-aL-gPm"/>
                                 </constraints>
@@ -80,7 +170,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QG-8Q-g4S">
-                                <rect key="frame" x="119.5" y="380" width="136" height="30"/>
+                                <rect key="frame" x="119.5" y="424" width="136" height="30"/>
                                 <state key="normal" title="Mudar cor de fundo"/>
                                 <connections>
                                     <action selector="changeColor:" destination="XcZ-3k-ieU" eventType="touchUpInside" id="30v-Fd-1GQ"/>
@@ -97,7 +187,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1sA-st-HAW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cor de fundo" id="J6B-ki-nQC"/>
+                    <navigationItem key="navigationItem" title="Cor de fundo" id="J6B-ki-nQC">
+                        <barButtonItem key="rightBarButtonItem" title="Próxima" id="ddq-0b-cIJ">
+                            <connections>
+                                <segue destination="baW-qB-pkc" kind="show" id="c4o-so-Ski"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lbMessage" destination="RF8-XH-Xvf" id="Kvi-E5-bqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxP-B2-nz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hh3-Lg-U6s">
-                                <rect key="frame" x="25" y="40" width="325" height="360"/>
+                                <rect key="frame" x="25" y="84" width="325" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="lI7-jy-qur">
                                         <rect key="frame" x="20" y="20" width="285" height="320"/>
@@ -133,9 +232,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gr-zU-vkM">
-                                <rect key="frame" x="127" y="410" width="121" height="30"/>
+                                <rect key="frame" x="127" y="454" width="121" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Mudar cor da tela"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="baW-qB-pkc" eventType="touchUpInside" id="CmT-hz-UE8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,8 +250,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FOq-QF-Jxz"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cor da tela" id="Tgm-W7-14q"/>
+                    <navigationItem key="navigationItem" title="Cor da tela" id="Tgm-W7-14q">
+                        <barButtonItem key="rightBarButtonItem" title="Finalizar" id="ULJ-pA-Yz8">
+                            <connections>
+                                <segue destination="O4Y-J3-gDF" kind="show" id="5ke-hT-PQ8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="lbMessage" destination="lI7-jy-qur" id="Lom-zl-PR9"/>
                         <outlet property="viBorder" destination="hh3-Lg-U6s" id="pNT-Iu-cdM"/>
                     </connections>
                 </viewController>
@@ -197,6 +306,7 @@
                         <viewLayoutGuide key="safeArea" id="xoE-87-tDi"/>
                     </view>
                     <connections>
+                        <outlet property="lbMessage" destination="XmB-Rj-xcq" id="v9A-tr-Rcw"/>
                         <outlet property="viBorder" destination="Osj-Pv-VSb" id="kmC-nR-OuL"/>
                     </connections>
                 </viewController>

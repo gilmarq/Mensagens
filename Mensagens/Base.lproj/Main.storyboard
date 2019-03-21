@@ -239,14 +239,42 @@
                                     <action selector="changeColor:" destination="baW-qB-pkc" eventType="touchUpInside" id="CmT-hz-UE8"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uc3-K7-ok5">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kS2-Dc-MYc">
+                                        <rect key="frame" x="306" y="14.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="changeBorder:" destination="baW-qB-pkc" eventType="valueChanged" id="Thx-3W-DQg"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usar borda branca " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1v-GT-GFt">
+                                        <rect key="frame" x="159" y="20.5" width="139" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kS2-Dc-MYc" firstAttribute="centerY" secondItem="uc3-K7-ok5" secondAttribute="centerY" id="GA7-fb-nad"/>
+                                    <constraint firstAttribute="height" constant="60" id="JlS-9r-MiD"/>
+                                    <constraint firstItem="d1v-GT-GFt" firstAttribute="centerY" secondItem="uc3-K7-ok5" secondAttribute="centerY" id="ZzJ-5h-qwt"/>
+                                    <constraint firstItem="kS2-Dc-MYc" firstAttribute="leading" secondItem="d1v-GT-GFt" secondAttribute="trailing" constant="8" id="eH9-1I-XZy"/>
+                                    <constraint firstAttribute="trailing" secondItem="kS2-Dc-MYc" secondAttribute="trailing" constant="20" id="nUn-ai-IQP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FOq-QF-Jxz" firstAttribute="bottom" secondItem="uc3-K7-ok5" secondAttribute="bottom" id="0Al-fM-b1g"/>
                             <constraint firstItem="FOq-QF-Jxz" firstAttribute="trailing" secondItem="hh3-Lg-U6s" secondAttribute="trailing" constant="25" id="6dA-yX-lux"/>
                             <constraint firstItem="4gr-zU-vkM" firstAttribute="top" secondItem="hh3-Lg-U6s" secondAttribute="bottom" constant="10" id="Ff4-fe-Y0r"/>
                             <constraint firstItem="4gr-zU-vkM" firstAttribute="centerX" secondItem="hh3-Lg-U6s" secondAttribute="centerX" id="MXs-86-P2S"/>
                             <constraint firstItem="hh3-Lg-U6s" firstAttribute="leading" secondItem="FOq-QF-Jxz" secondAttribute="leading" constant="25" id="dQJ-od-UWn"/>
                             <constraint firstItem="hh3-Lg-U6s" firstAttribute="top" secondItem="FOq-QF-Jxz" secondAttribute="top" constant="20" id="guk-j0-SrF"/>
+                            <constraint firstItem="uc3-K7-ok5" firstAttribute="trailing" secondItem="FOq-QF-Jxz" secondAttribute="trailing" id="sJY-w3-g5x"/>
+                            <constraint firstItem="uc3-K7-ok5" firstAttribute="leading" secondItem="FOq-QF-Jxz" secondAttribute="leading" id="wVM-nr-Rms"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FOq-QF-Jxz"/>
                     </view>
@@ -259,12 +287,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lbMessage" destination="lI7-jy-qur" id="Lom-zl-PR9"/>
+                        <outlet property="swWhiteBorder" destination="kS2-Dc-MYc" id="ELS-J1-98F"/>
                         <outlet property="viBorder" destination="hh3-Lg-U6s" id="pNT-Iu-cdM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVW-27-K1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="133"/>
+            <point key="canvasLocation" x="1980" y="132.68365817091455"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="idx-DO-QI4">
